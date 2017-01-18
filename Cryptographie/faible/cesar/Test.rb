@@ -4,24 +4,26 @@
 #
 #<b>Date    :</b>
 #
-#===butdelaclasse
+#===Test la classe cesar
 #<b>Liste des méthodes
 #*
 #</b>
-class
-  #== Variable de classe ==
+require './Cryptographie/faible/cesar/Cesar.rb'
 
-  #===========================
-  #== Variables d'instance ==
+class Test
+  decalage = 3
+  
+  txt1 = Cesar.creer("How d that taste?")
+  txt1c = Cesar.creer("")
+  txt1c = txt1.codage(decalage)
+  puts txt1c.texte
 
-  #===========================
+  txt1.texte=("HOW D THAT TASTE?")
+  txt1c = txt1.codage(decalage)
+  puts txt1c.texte
 
-  private_class_method :new
-
-  def initialize()#:nodoc:
-  end
-  def .creer()
-    new()
-  end
+  txt1.texte=("how d that taste?")
+  txt1c = txt1.codage(decalage)
+  puts txt1c.texte
 
 end
