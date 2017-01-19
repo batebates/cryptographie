@@ -25,7 +25,7 @@ class Cesar
 #===Applique le code de cesar avec un decalage entré en paramètre
 #
 #===Paramètres :
-#* <b></b> :
+#* <b>decalage</b> : int : indique le nombre de decalage a réaliser
 def codage(decalage)
   1.upto(decalage) do
     @texte = @texte.tr('a-z','b-za-b').tr('A-Z','B-ZA-B')

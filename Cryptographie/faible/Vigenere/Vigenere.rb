@@ -27,20 +27,27 @@ class Vigenere
 #===renvoie la valeur de la lettre selon la clef et la Table de Vigenère
 #
 #===Paramètres :
-#* <b></b> :
+#* <b>lettre</b> : char : contient la valeur de la lettre a chiffrer
+#* #* <b>clef</b> :  char : contient la valeur de la clef
 def substitution(lettre,clef)
-  return (( clef.ord + lettre.ord - 'A'.ord*2)%26 +'A'.ord).chr
+  if(lettre>='A' && lettre<='Z')
+    return (( clef.ord + lettre.ord - 'A'.ord*2)%26 +'A'.ord).chr
+  else
+    return lettre
+  end
 end
 
   #===code un texte avec la methode Vigenere
   #
   #===Paramètres :
-  #* <b></b> :
+  #* <b>clef</b> : String contient la chaine de caractere representant la clef 
   def codage(clef)
     arrayClef = clef.split("")
     arrayTexte = @texte.split("")
-
-    texte = arrayTexte.join
+    arrayTexte.each_index do |indice|
+      arrayTexte[indice] = substitution(arrayTexte[indice],arrayClef[indice%arrayClef.length])
+    end
+    @texte = arrayTexte.join
     return self
   end
 
