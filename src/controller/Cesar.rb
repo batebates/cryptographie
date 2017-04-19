@@ -11,6 +11,7 @@
 class Cesar
   #== Variables d'instance ==
    @texte
+   # @attr_reader [String] texte text to code
    attr_accessor :texte
   #===========================
 
@@ -19,13 +20,17 @@ class Cesar
   def initialize(texte)#:nodoc:
     @texte = texte
   end
+
+  # Constructor
+  #
+  # @param texte [String]  text value
   def Cesar.creer(texte)
     new(texte)
   end
-#===Applique le code de cesar avec un decalage entré en paramètre
+
+# code a text with cesar method
 #
-#===Paramètres :
-#* <b>decalage</b> : int : indique le nombre de decalage a réaliser
+# @param decalage [int]  offset value
 def codage(decalage)
   1.upto(decalage) do
     @texte = @texte.tr('a-z','b-za-b').tr('A-Z','B-ZA-B')

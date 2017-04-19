@@ -11,6 +11,7 @@
 class Rot13
   #== Variables d'instance ==
    @texte
+   # @attr_reader [String] texte text to code
    attr_accessor :texte
   #===========================
 
@@ -19,13 +20,14 @@ class Rot13
   def initialize(texte)#:nodoc:
     @texte = texte
   end
+
+  # Constructor
+  #
+  # @param texte [String]  text value
   def Rot13.creer(texte)
     new(texte)
   end
 #===Chiffre en ROT13
-#
-#===Paramètres :
-#* <b></b> :
 def codage()
     @texte = @texte.tr('a-z','n-za-m').tr('A-Z','N-ZA-M')
   return self

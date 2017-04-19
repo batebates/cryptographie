@@ -8,9 +8,11 @@
 #<b>Liste des méthodes
 #*
 #</b>
+
 class Vigenere
   #== Variables d'instance ==
   @texte
+  # @attr_reader [String] texte text to code
   attr_accessor :texte
   #===========================
 
@@ -20,15 +22,18 @@ class Vigenere
     @texte = texte
   end
 
+  # Constructor
+  #
+  # @param texte [String]  text value
   def Vigenere.creer(texte)
     new(texte)
   end
 
-#===renvoie la valeur de la lettre selon la clef et la Table de Vigenère
+# code a letter
 #
-#===Paramètres :
-#* <b>lettre</b> : char : contient la valeur de la lettre a chiffrer
-#* #* <b>clef</b> :  char : contient la valeur de la clef
+# @param lettre [char] letter value
+# @param clef [char] key letter value
+# @return [char]
 def substitution(lettre,clef)
   if(lettre>='A' && lettre<='Z')
     return (( clef.ord + lettre.ord - 'A'.ord*2)%26 +'A'.ord).chr
@@ -37,10 +42,9 @@ def substitution(lettre,clef)
   end
 end
 
-  #===code un texte avec la methode Vigenere
+  # code a text
   #
-  #===Paramètres :
-  #* <b>clef</b> : String contient la chaine de caractere representant la clef 
+  # @param clef [String] key value
   def codage(clef)
     arrayClef = clef.split("")
     arrayTexte = @texte.split("")
