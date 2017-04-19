@@ -20,14 +20,14 @@ class Test < Minitest::Test
   end
 
   def test_cesar
-    assert_equal "",@cesar.codage(5)
+    assert_equal "Mtb i ymfy yfxyj?",@cesar.codage(5).texte
   end
 
   def test_rot13
-    assert_equal "",@rot13.codage
+    assert_equal "Ubj q gung gnfgr?",@rot13.codage.texte
   end
 
   def test_vigenere
-    assert_equal "",@vigenere.codage("lait")
+    assert_equal "",@vigenere.codage("lait").texte
   end
 end
