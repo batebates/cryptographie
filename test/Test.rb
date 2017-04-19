@@ -8,9 +8,9 @@
 #<b>Liste des méthodes
 #*
 #</b>
-load '../src/controller/Cesar.rb'
-load '../src/controller/Vigenere.rb'
-load '../src/controller/Rot13.rb'
+require_relative '../src/controller/Cesar.rb'
+require_relative '../src/controller/Vigenere.rb'
+require_relative '../src/controller/Rot13.rb'
 
 class Test < Minitest::Test
   def setup
