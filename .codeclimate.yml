@@ -8,5 +8,12 @@ engines:
     enabled: true
   rubocop:
     enabled: true
+ratings:
+  paths:
+  - "src/**"
 exclude_paths:
   - "assets/*"
+  - "test/*"
+  - "cryptoanalyse/*"
+  - "cryptographie/*"
+  
