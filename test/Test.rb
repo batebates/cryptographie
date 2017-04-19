@@ -8,27 +8,26 @@
 #<b>Liste des méthodes
 #*
 #</b>
-require '../Cryptographie/faible/ROT13/Rot13.rb'
+load '../src/controller/Cesar.rb'
+load '../src/controller/Vigenere.rb'
+load '../src/controller/Rot13.rb'
 
-class Test
+class Test < Minitest::Test
+  def setup
+    @rot13 = Rot13.creer("How d that taste?")
+    @cesar = Cesar.creer("How d that taste?")
+    @vigenere = Vigenere.creer("How d that taste?")
+  end
 
-  txt1 = Rot13.creer("How d that taste?")
-  txt1c = Rot13.creer("")
-  txt1c = txt1.codage
-  puts txt1c.texte
-  txt1c = txt1.codage
-  puts txt1c.texte
+  def test_cesar
+    assert_equal "",@cesar.codage(5)
+  end
 
-  txt1.texte=("HOW D THAT TASTE?")
-  txt1c = txt1.codage
-  puts txt1c.texte
-  txt1c = txt1.codage
-  puts txt1c.texte
+  def test_rot13
+    assert_equal "",@rot13.codage
+  end
 
-  txt1.texte=("how d that taste?")
-  txt1c = txt1.codage
-  puts txt1c.texte
-  txt1c = txt1.codage
-  puts txt1c.texte
-
+  def test_vigenere
+    assert_equal "",@vigenere.codage("lait")
+  end
 end

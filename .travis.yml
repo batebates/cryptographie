@@ -15,7 +15,7 @@ install:
 
 script:
   - rake
-  - CODECLIMATE_REPO_TOKEN=fbc4fd787891932040bebcbe255d99b46e890203090829d2317f990ff1d8bd80 bundle exec codeclimate-test-reporter
+  - CODECLIMATE_REPO_TOKEN=fbc4fd787891932040bebcbe255d99b46e890203090829d2317f990ff1d8bd80
 
 
 branches:
