@@ -11,7 +11,8 @@
 class Cesar
   #== Variables d'instance ==
    @texte
-   # @attr_reader [String] texte text to code
+   # @!attribute texte
+   # @return [String] text to code
    attr_accessor :texte
   #===========================
 
