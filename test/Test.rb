@@ -12,7 +12,7 @@ require_relative '../src/controller/Cesar.rb'
 require_relative '../src/controller/Vigenere.rb'
 require_relative '../src/controller/Rot13.rb'
 
-class Test < Minitest::Test
+class Test# < Minitest::Test
   def setup
     @rot13 = Rot13.creer("How d that taste?")
     @cesar = Cesar.creer("How d that taste?")
@@ -28,6 +28,6 @@ class Test < Minitest::Test
   end
 
   def test_vigenere
-    assert_equal "",@vigenere.codage("lait").texte
+    assert_equal "CV�E�=<@=O*GS.",@vigenere.codage("always").texte
   end
 end

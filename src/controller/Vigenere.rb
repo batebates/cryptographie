@@ -36,11 +36,7 @@ class Vigenere
 # @param clef [char] key letter value
 # @return [char]
 def substitution(lettre,clef)
-  if(lettre>='A' && lettre<='Z')
-    return (( clef.ord + lettre.ord - 'A'.ord*2)%26 +'A'.ord).chr
-  else
-    return lettre
-  end
+    return (( clef.ord + lettre.ord)%152).chr
 end
 
   # code a text
